@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "tasks": [
+        {
+            "label": "Install server deps",
+            "type": "shell",
+            "command": "npm install",
+            "options": {
+                "cwd": "${workspaceFolder}/server"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Install client deps",
+            "type": "shell",
+            "command": "npm install",
+            "options": {
+                "cwd": "${workspaceFolder}/client"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Start server",
+            "type": "shell",
+            "command": "npm start",
+            "options": {
+                "cwd": "${workspaceFolder}/server"
+            },
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "label": "Start client",
+            "type": "shell",
+            "command": "npm run dev",
+            "options": {
+                "cwd": "${workspaceFolder}/client"
+            },
+            "isBackground": true,
+            "problemMatcher": []
+        }
+    ]
+}
