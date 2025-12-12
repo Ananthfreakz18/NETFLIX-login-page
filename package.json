@@ -1,13 +1,13 @@
 {
-    "name": "netflix-login-monorepo",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-        "start:server": "node server/index.js",
-        "start:client": "cd client && npm run dev",
-        "dev": "concurrently \"npm run start:server\" \"npm run start:client\""
-    },
-    "devDependencies": {
-        "concurrently": "^8.0.1"
-    }
+  "name": "netflix-login-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start:server": "node server/index.js",
+    "start:client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run start:server\" \"npm run start:client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
 }

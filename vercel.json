@@ -1,7 +1,15 @@
 {
-    "buildCommand": "cd client && npm run build",
-    "outputDirectory": "client/dist",
-    "env": {
-        "VITE_API_URL": "https://netflix-login-page-t0pq.onrender.com"
+  "version": 2,
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build"
     }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "client/dist/$1"
+    }
+  ]
 }

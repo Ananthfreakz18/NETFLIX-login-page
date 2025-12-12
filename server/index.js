@@ -6,6 +6,11 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+// Health / root route so browser GET / doesn't return "Cannot GET /"
+app.get('/', (req, res) => {
+    res.send('Auth server running')
+})
+
 app.post('/api/login', (req, res) => {
     const { email, password } = req.body || {}
     if (!email || !password) {
@@ -20,4 +25,13 @@ app.post('/api/login', (req, res) => {
 })
 
 const PORT = process.env.PORT || 4000
-app.listen(PORT, () => console.log(`Auth server listening on http://localhost:${PORT}`))
+const server = app.listen(PORT, () => console.log(`Auth server listening on http://localhost:${PORT}`))
+
+server.on('error', (err) => {
+    if (err && err.code === 'EADDRINUSE') {
+        console.error(`Port ${PORT} is already in use. Use a different PORT or stop the process using it.`)
+        process.exit(1)
+    }
+    console.error('Server error:', err)
+    process.exit(1)
+})
