@@ -1,4 +1,7 @@
 {
-  "buildCommand": "cd client && npm run build",
-  "outputDirectory": "client/dist"
+    "buildCommand": "cd client && npm run build",
+    "outputDirectory": "client/dist",
+    "env": {
+        "VITE_API_URL": "https://netflix-login-page-t0pq.onrender.com"
+    }
 }
